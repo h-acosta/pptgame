@@ -9,6 +9,9 @@
   <link rel="stylesheet" type="text/css" href="css/app.css">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
       <!-- Fixed navbar -->
@@ -37,18 +40,24 @@
       	<center>
       		<h1>Piedra, Papel o Tijera</h1>
           <h2>Que eliges?</h2>
-           <input  type="text" ><br>
-          <button class="btn btn-lg btn-primary">listo</button>
+          <form>
+            <br>
+            <input type="radio"  name="userOption" value="0" > Piedra
+            <br>
+            <input type="radio" name="userOption" value="1"> Papel
+            <br>
+            <input type="radio"  name="userOption" value="2"> Tijera 
+            <br>
+            <input type="button" id="procesar" class="btn btn-lg btn-primary"  value="Listo!">        
+           </form>
         </center>
      </div> <!-- /container -->
 
 <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
