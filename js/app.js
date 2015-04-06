@@ -1,3 +1,4 @@
+
     $(document).ready(function() {
     	var piedra = 0;
 		var papel = 1;
