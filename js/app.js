@@ -21,11 +21,11 @@
 			}
 			
 			function resultadoJuego(result){
-				 $("#resultado").html(" <span>Resultado: " + result + "</span> <p>Cumputadora selecciono: " + opciones[opcionMaquina] + " </p> <p>Tu seleccionaste: " + opciones[opcionUsuario] + "</p> </br>");
+				 $("#resultado").html(" <h3> " + result + "</h3> <p>Cumputadora selecciono: " + opciones[opcionMaquina] + " </p> <p>Tu seleccionaste: " + opciones[opcionUsuario] + "</p> </br>");
 			}
 
-			function getImage(){
-  				  var giphyAPI ="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=clap";
+			function getImage(tag){
+  				  var giphyAPI ="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + tag;
  				 $.getJSON( giphyAPI, {
   					  format: "json"
   					})
@@ -37,7 +37,7 @@
 			if(opcionUsuario == piedra)
 			{
 				if (opcionMaquina == piedra) 
-				{
+				{       getImage("quiet")
 			            resultadoJuego("Enpate!");
 				}
 				else if (opcionMaquina == papel) 
@@ -55,15 +55,15 @@
 			{
 					if (opcionMaquina == piedra) 
 				{
-			           getImage();
+			           getImage("clap");
 			           resultadoJuego("Ganaste!");
 				}
 				else if (opcionMaquina == tijera) 
-				{
+				{       getImage("sad")
 			            resultadoJuego("Perdiste:(");
 				}
 				else if (opcionMaquina == papel) 
-				{
+				{       getImage("quiet")
 			            resultadoJuego("Enpate!");
 				}
 			}
@@ -72,20 +72,18 @@
 			{
 					if (opcionMaquina == papel) 
 				{
-						getImage();
+						getImage("clap");
 			            resultadoJuego("Ganaste!");
 				}
 				else if (opcionMaquina == piedra) 
-				{
+				{       getImage("sad")
 			            resultadoJuego("Perdiste :(");
-				}
+				}       
 				else if (opcionMaquina == tijera) 
-				{
+				{       getImage("quiet")
 			            resultadoJuego("Enpate!");
 				}
 			} 
         });
 
     });
-
-
