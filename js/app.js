@@ -21,22 +21,33 @@
 			}
 			
 			function resultadoJuego(result){
-				 $("#resultado").html(" <span>Resultado: " + result + "</span> <p>Cumputadora selecciono: " + opciones[opcionMaquina] + " </p> <p>Tu seleccionaste: " + opciones[opcionUsuario] + "</p>");
+				 $("#resultado").html(" <span>Resultado: " + result + "</span> <p>Cumputadora selecciono: " + opciones[opcionMaquina] + " </p> <p>Tu seleccionaste: " + opciones[opcionUsuario] + "</p> </br>");
+			}
+
+			function getImage(){
+  				  var giphyAPI ="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=clap";
+ 				 $.getJSON( giphyAPI, {
+  					  format: "json"
+  					})
+    			  .done(function( data ) {
+      				   $( "<img height='200' width='200'>" ).attr( "src", data.data.image_url ).appendTo( "#image" );
+        			});
 			}
 
 			if(opcionUsuario == piedra)
 			{
 				if (opcionMaquina == piedra) 
 				{
-
 			            resultadoJuego("Enpate!");
 				}
 				else if (opcionMaquina == papel) 
 				{
+						getImage("sad");
 			            resultadoJuego("Perdiste :(");
 				}
 				else if (opcionMaquina == tijera) 
 				{
+			            getImage("clap");
 			            resultadoJuego("Ganaste!");
 				}
 			}
@@ -44,6 +55,7 @@
 			{
 					if (opcionMaquina == piedra) 
 				{
+			           getImage();
 			           resultadoJuego("Ganaste!");
 				}
 				else if (opcionMaquina == tijera) 
@@ -60,6 +72,7 @@
 			{
 					if (opcionMaquina == papel) 
 				{
+						getImage();
 			            resultadoJuego("Ganaste!");
 				}
 				else if (opcionMaquina == piedra) 
