@@ -44,15 +44,15 @@
 			{
 					if (opcionMaquina == piedra) 
 				{
-			            alert("Ganaste!");
+			           resultadoJuego("Ganaste!");
 				}
 				else if (opcionMaquina == tijera) 
 				{
-			            alert("Perdiste:(");
+			            resultadoJuego("Perdiste:(");
 				}
 				else if (opcionMaquina == papel) 
 				{
-			            alert("Enpate!");
+			            resultadoJuego("Enpate!");
 				}
 			}
 
@@ -60,15 +60,15 @@
 			{
 					if (opcionMaquina == papel) 
 				{
-			            alert("Ganaste!");
+			            resultadoJuego("Ganaste!");
 				}
 				else if (opcionMaquina == piedra) 
 				{
-			            alert("Perdiste :(");
+			            resultadoJuego("Perdiste :(");
 				}
 				else if (opcionMaquina == tijera) 
 				{
-			            alert("Enpate!");
+			            resultadoJuego("Enpate!");
 				}
 			} 
         });
